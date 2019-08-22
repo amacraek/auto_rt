@@ -1,10 +1,10 @@
 # Auto_RT (v0.1b)
 
+A Windows tool for exploring, editing, and remotely executing [Atomic Red Team](https://github.com/redcanaryco/atomic-red-team) in Windows environments.
+
 ![gui-main](images/gui-main.png)
 
 ![Gui Editor](images/gui-editor.png)
-
-A Windows tool for exploring, editing, and remotely executing [Atomic Red Team](https://github.com/redcanaryco/atomic-red-team) in Windows environments.
 
 ## How does Auto_RT v0.1b work?
 ![Diagram](images/diagram.png)
@@ -12,11 +12,15 @@ A Windows tool for exploring, editing, and remotely executing [Atomic Red Team](
  - Auto_RT.exe hosts a secure named pipe server and launches ElevatedProcess.exe as its client.
  - ElevatedProcess.exe connects to the target machine via paexec.exe and redirects its IO streams over the named pipe.
  - Atomic Red Team commands are piped from Auto_RT.exe to ElevatedProcess.exe, which then executes them on the target machine.
+ 
+## Installation
+See [Releases](https://github.com/amacraek/auto_rt/releases) for binaries. 
 
 ## Usage
 ![Gui Annotation](images/gui-annotation.png)
 **1. Atomic Red Team Configuration (red)**
- - Enter the path to the "atomics" subdirectory of the Atomic Red Team github repo. Click "Load AtomicRT" to populate the list view. 
+ - Clone [Atomic Red Team](https://github.com/redcanaryco/atomic-red-team) to your machine.
+ - Enter the path to the "atomics" subdirectory of the Atomic Red Team repo. Click "Load AtomicRT" to populate the list view.
  - Select the techniques you want to queue, then click the orange "Load Commands" button to populate the command queue.
  - Click "Open editor" to open a simple explorer and editor for Atomic Red Team YAML files.
 
